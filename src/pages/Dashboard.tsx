@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import leaf from "../assets/icons/leaf.svg";
 import TestImg from "../assets/images/TestImg.jpeg";
 
 const Dashboard = () => {
+    // Example in a React component or util function
+    const fetchRecipes = async () => {
+        const response = await fetch('https://ygqufwqtqgbgtcaqsdvt.supabase.co/rest/v1/recipes', {
+        headers: {
+            apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
+            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+        },
+        });
+    
+        const data = await response.json();
+        console.log("", data);
+    };
+  
+    useEffect(() => {
+        fetchRecipes();
+      }, []);
+      
     return (
         <div className="h-screen flex flex-col">
             <div className="flex flex-col items-center pt-8 space-y-4">
