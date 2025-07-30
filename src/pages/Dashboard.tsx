@@ -43,6 +43,7 @@ const Dashboard = () => {
                         <div className="h-1/2 w-1/3 p-4">
                             <h2 className="text-2xl">Recipe 1</h2>
                             <p>Here i will put any short description to the recipe</p>
+                            <p>Test</p>
                             <img src={TestImg} alt="Food Test Image" className="w-full h-fit" />
                         </div>
                     </div>
